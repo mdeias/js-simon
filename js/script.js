@@ -25,3 +25,11 @@ for (let i = 0; i < 5; i++) {
     contenitore.append(casella);
 }
 
+setTimeout(function(){
+    contenitore.innerHTML = "";
+
+    for (let i = 0; i < 5; i++) {
+        const numeroUtente = prompt("inserisci il numero");
+        console.log(numeroUtente);
+    }
+}, 5000);
