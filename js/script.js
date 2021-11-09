@@ -14,15 +14,14 @@ function numRandom(min, max) {
     return Math.floor(Math.random() * (max - min +1) + min);
 }
 
-//funzione che crea le casella 
-const generaCasella = (casellaHtml) =>{
-    const casellaHtml = 
-    `
-        <div class="casella">
-            <h1>${numRandom(1, 100)}</h1>
-        </div> 
-    `;
-    return casellaHtml;
-};
+// ciclo for che stampa le caselle
+const contenitore = document.querySelector(".container");
 
-// funzione che stampa le caselle
+for (let i = 0; i < 5; i++) {
+    const casella = document.createElement("div");
+    casella.classList.add("casella");
+    casella.innerHTML = `<h1>${numRandom(1, 100)}</h1>`;
+    console.log(casella);
+    contenitore.append(casella);
+}
+
