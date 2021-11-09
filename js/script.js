@@ -19,11 +19,10 @@ function numRandom(min, max) {
 const contenitore = document.querySelector(".container");
 const numeriPc =[];
 const numeriUtente = [];
-
-
 const testo = document.createElement("h1");
-testo.innerHTML = `Memorizza i seguenti numeri`;
+testo.innerHTML = `Memorizza i numeri`;
 contenitore.append(testo);
+
 
 
 for (let i = 0; i < 5; i++) {
@@ -41,15 +40,15 @@ console.log(numeriPc);
 
 setTimeout(function(){
     contenitore.innerHTML = "";
-
+    
     for (let i = 0; i < 5; i++) {
         const numeroUtente = parseInt( prompt("inserisci il numero"));
         numeriUtente.push(numeroUtente);
         console.log(numeroUtente);
-        if (numeriPc[i] === numeriUtente[i]) {
+        if (numeriPc.includes(numeroUtente)) {
             const casella = document.createElement("div");
             casella.classList.add("casella");
-            casella.innerHTML = `<h1>${numeriPc[i]}</h1>`;
+            casella.innerHTML = `<h1>${numeriUtente[i]}</h1>`;
             contenitore.append(casella);
         }
     }
