@@ -14,11 +14,11 @@ function numRandom(min, max) {
     return Math.floor(Math.random() * (max - min +1) + min);
 }
 
-const numeriUtente = [];
-const numeriPc =[];
 
 // ciclo for che stampa le caselle
 const contenitore = document.querySelector(".container");
+const numeriPc =[];
+const numeriUtente = [];
 
 
 
@@ -31,7 +31,7 @@ for (let i = 0; i < 5; i++) {
     numeriPc.push(numeriCasuali);
     contenitore.append(casella);
 }
-    console.log(numeriPc);
+console.log(numeriPc);
 
 
 
@@ -39,9 +39,15 @@ setTimeout(function(){
     contenitore.innerHTML = "";
 
     for (let i = 0; i < 5; i++) {
-        const numeroUtente = prompt("inserisci il numero");
+        const numeroUtente = parseInt( prompt("inserisci il numero"));
         numeriUtente.push(numeroUtente);
         console.log(numeroUtente);
+        if (numeriPc[i] === numeriUtente[i]) {
+            const casella = document.createElement("div");
+            casella.classList.add("casella");
+            casella.innerHTML = `<h1>${numeriPc[i]}</h1>`;
+            contenitore.append(casella);
+        }
     }
     console.log(numeriUtente);
 }, 5000);
