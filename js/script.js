@@ -14,22 +14,35 @@ function numRandom(min, max) {
     return Math.floor(Math.random() * (max - min +1) + min);
 }
 
+const numeriUtente = [];
+const numeriPc =[];
+
 // ciclo for che stampa le caselle
 const contenitore = document.querySelector(".container");
+
+
 
 for (let i = 0; i < 5; i++) {
     const casella = document.createElement("div");
     casella.classList.add("casella");
-    casella.innerHTML = `<h1>${numRandom(1, 100)}</h1>`;
+    let numeriCasuali = numRandom(1, 100)
+    casella.innerHTML = `<h1>${numeriCasuali}</h1>`;
     console.log(casella);
+    numeriPc.push(numeriCasuali);
     contenitore.append(casella);
 }
+    console.log(numeriPc);
+
+
 
 setTimeout(function(){
     contenitore.innerHTML = "";
 
     for (let i = 0; i < 5; i++) {
         const numeroUtente = prompt("inserisci il numero");
+        numeriUtente.push(numeroUtente);
         console.log(numeroUtente);
     }
+    console.log(numeriUtente);
 }, 5000);
+
