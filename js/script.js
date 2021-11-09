@@ -21,11 +21,15 @@ const numeriPc =[];
 const numeriUtente = [];
 
 
+const testo = document.createElement("h1");
+testo.innerHTML = `Memorizza i seguenti numeri`;
+contenitore.append(testo);
+
 
 for (let i = 0; i < 5; i++) {
     const casella = document.createElement("div");
     casella.classList.add("casella");
-    let numeriCasuali = numRandom(1, 100)
+    let numeriCasuali = numRandom(1, 100);
     casella.innerHTML = `<h1>${numeriCasuali}</h1>`;
     console.log(casella);
     numeriPc.push(numeriCasuali);
